@@ -12,6 +12,8 @@ const useAudio = (url) => {
 
   useEffect(() => {
     const audio = audioRef.current;
+    audio.loop = true; // ✅ enable looping
+
     if (playing) {
       audio.play().catch((err) => {
         console.warn("Autoplay blocked:", err);
