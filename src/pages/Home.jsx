@@ -117,13 +117,16 @@ function Home() {
           </motion.div>
 
           <motion.button
-            className="commonBtn flex items-center gap-4 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
+            <NavLink
+            to={'/results'}
+            className="commonBtn flex items-center gap-4 cursor-pointer">
             <RiAiGenerate2 className="text-xl" />
-            GET RECOMMENDATIONS
+              GET RECOMMENDATIONS
+            </NavLink>
           </motion.button>
         </ul>
       </motion.div>
