@@ -31,17 +31,11 @@ function Home() {
   };
 
   return (
-<<<<<<< HEAD
     <div
       className="
       flex flex-col gap-8 justify-center items-center
-      p-4 min-h-full w-full relative overflow-hidden
-    "
+      p-4 min-h-full w-full relative overflow-hidden"
     >
-=======
-    <div className="flex flex-col gap-8 justify-center items-center p-4 min-h-full w-full relative overflow-hidden">
-      <Player customClass="absolute top-0 right-0" />
->>>>>>> upstream/main
 
       <motion.div
         animate={{
