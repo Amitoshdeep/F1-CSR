@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 // Componenets
 import { BiSolidDashboard } from "react-icons/bi";
+import { FaGlobeAmericas } from "react-icons/fa";
 
 function Navbar() {
   return (
@@ -33,6 +34,16 @@ function Navbar() {
 
           <BiSolidDashboard />
           <p>Dashboard</p>
+        </NavLink>
+
+        <NavLink
+        to={`/tracks`}
+        className={ ({isActive})=> `flex cursor-pointer items-center gap-2 rounded-lg px-1.5 py-2
+
+        ${isActive? "bg-white/10":""}`}>
+
+          <FaGlobeAmericas />
+          <p>Tracks</p>
         </NavLink>
 
       </ul>

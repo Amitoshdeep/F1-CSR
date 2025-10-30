@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { MdAudiotrack } from "react-icons/md";
+import { GiSmokeBomb } from "react-icons/gi";
 import { GiCarWheel } from "react-icons/gi";
 import { GiFog } from "react-icons/gi";
 
@@ -46,8 +46,9 @@ const Player = ({ url = "/audio/audio.mpeg" , customClass} ) => {
         className="relative p-1.5 bg-red-600/0 rounded-full flex items-center justify-center transition-all"
       >
         {/* Fog behind */}
-        <GiFog
-          className={`absolute text-2xl right-7.5 top-5 opacity-30 animate-pulse ${
+        {/* <GiSmokeBomb /> */}
+        <GiSmokeBomb
+          className={`absolute text-2xl right-7.5 -rotate-[94deg] top-5 animate-pulse ${
             playing ? "block" : "hidden"
           }`}
           style={{

@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import RealHome from './pages/RealHome'
 import Results from './pages/Results'
+import Tracks from './pages/Tracks'
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
           <Route path='/' element={<RealHome />} />
           <Route path='/dashboard' element={<Home />} />
           <Route path='/results' element={<Results/>} />
+          <Route path='/tracks' element={<Tracks/>} />
         </Routes>
 
       </div>
