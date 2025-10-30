@@ -27,7 +27,7 @@ function Navbar() {
       <ul className='p-2.5'>
 
         <NavLink
-        to={`/dashboard`}
+        to={`/`}
         className={ ({isActive})=> `flex cursor-pointer items-center gap-2 rounded-lg px-1.5 py-2
 
         ${isActive? "bg-white/10":""}`}>
