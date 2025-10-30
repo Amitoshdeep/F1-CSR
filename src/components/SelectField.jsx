@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-function SelectField({ label, name, options = [] }) {
+function SelectField({ label, name, options = [], value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -9,11 +9,13 @@ function SelectField({ label, name, options = [] }) {
       <select
         name={name}
         id={name}
+        value={value}
+        onChange={onChange}
         className="commonDropDowns w-full appearance-none"
         onClick={() => setIsOpen(!isOpen)}
-        defaultValue=""
+        onBlur={() => setIsOpen(false)}
       >
-        <option value="" disabled hidden>
+        <option value="" disabled>
           {label}
         </option>
         {options.map((opt, idx) => (
@@ -24,7 +26,7 @@ function SelectField({ label, name, options = [] }) {
       </select>
 
       <IoIosArrowDown
-        className={`absolute right-3 top-1/2 -translate-y-1/2 transition-transform duration-300
+        className={`absolute right-3 top-1/2 -translate-y-1/2 transition-transform duration-300 pointer-events-none
         ${isOpen ? "rotate-180" : ""}`}
       />
     </div>

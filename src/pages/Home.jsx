@@ -1,29 +1,52 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-
-// My components
 import { IoSparkles } from "react-icons/io5";
 // import Player from "../components/Player";
 import SelectField from "../components/SelectField";
 import { RiAiGenerate2 } from "react-icons/ri";
 
+const tracks = [
+  "Silverstone",
+  "Spa-Francorchamps",
+  "Melbourne",
+  "Monaco",
+  "Suzuka"
+];
+
+const weatherOptions = ["Dry", "Rainy", "Foggy"];
+
 function Home() {
   const [getStart, setGetStart] = useState(false);
+  const [selectedTrack, setSelectedTrack] = useState("");
+  const [selectedWeather, setSelectedWeather] = useState("");
+  const navigate = useNavigate();
+
+  const handleGenerateSetup = () => {
+    if (selectedTrack && selectedWeather) {
+      navigate('/results', {
+        state: { track: selectedTrack, weather: selectedWeather }
+      });
+    }
+  };
 
   return (
+<<<<<<< HEAD
     <div
       className="
       flex flex-col gap-8 justify-center items-center
       p-4 min-h-full w-full relative overflow-hidden
     "
     >
+=======
+    <div className="flex flex-col gap-8 justify-center items-center p-4 min-h-full w-full relative overflow-hidden">
+      <Player customClass="absolute top-0 right-0" />
+>>>>>>> upstream/main
 
-      {/* INTRO DIV (slides up slightly) */}
       <motion.div
         animate={{
-          y: getStart ? -10 : 0, // smooth upward slide
-          scale: getStart ? 0.90 : 1, // subtle scale shrink
+          y: getStart ? -10 : 0,
+          scale: getStart ? 0.90 : 1,
         }}
         transition={{
           duration: 0.8,
@@ -46,7 +69,7 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          Get your optimal F1 car setup instantly — track, weather, and AI logic combined
+          Get your optimal F1 car setup instantly – track, weather, and AI logic combined
         </motion.p>
 
         <motion.ul
@@ -55,17 +78,16 @@ function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          <NavLink
+          <button
             className="commonBtn flex items-center gap-2"
             onClick={() => setGetStart(!getStart)}
           >
             <IoSparkles className="text-lg" />
             {getStart ? "RESET" : "GET STARTED"}
-          </NavLink>
+          </button>
         </motion.ul>
       </motion.div>
 
-      {/* FORM DIV (slides in smoothly below) */}
       <motion.div
         initial={{ opacity: 0, y: 80 }}
         animate={{
@@ -96,7 +118,9 @@ function Home() {
             <SelectField
               label="SELECT YOUR TRACK"
               name="track"
-              options={["Track 1", "Track 2", "Track 3"]}
+              options={tracks}
+              value={selectedTrack}
+              onChange={(e) => setSelectedTrack(e.target.value)}
               className="commonDropDowns"
             />
           </motion.div>
@@ -109,7 +133,9 @@ function Home() {
             <SelectField
               label="SELECT THE WEATHER"
               name="weather"
-              options={["Dry", "Rainy", "Foggy"]}
+              options={weatherOptions}
+              value={selectedWeather}
+              onChange={(e) => setSelectedWeather(e.target.value)}
               className="commonDropDowns"
             />
           </motion.div>
@@ -118,13 +144,14 @@ function Home() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            onClick={handleGenerateSetup}
+            disabled={!selectedTrack || !selectedWeather}
+            className={`commonBtn flex items-center gap-4 ${
+              !selectedTrack || !selectedWeather ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+            }`}
           >
-            <NavLink
-            to={'/results'}
-            className="commonBtn flex items-center gap-4 cursor-pointer">
             <RiAiGenerate2 className="text-xl" />
-              GET RECOMMENDATIONS
-            </NavLink>
+            GET RECOMMENDATIONS
           </motion.button>
         </ul>
       </motion.div>
