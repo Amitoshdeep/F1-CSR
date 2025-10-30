@@ -7,7 +7,13 @@ function Results() {
       p-4 min-h-full w-full relative overflow-hidden'>
 
       <div className='commonBg'>
-        <p>Results</p>
+        <p>TrackName</p>
+        <p>Weather</p>
+        <p>Downforce</p>
+        <p>Suspension</p>
+        <p>TirePressure</p>
+        <p>BrakeBias</p>
+        <p>Notes</p>
       </div>
 
     </div>
