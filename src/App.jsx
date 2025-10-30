@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import RealHome from './pages/RealHome'
+import Results from './pages/Results'
 
 function App() {
   return (
@@ -76,6 +77,7 @@ function App() {
         <Routes>
           <Route path='/' element={<RealHome />} />
           <Route path='/dashboard' element={<Home />} />
+          <Route path='/results' element={<Results/>} />
         </Routes>
 
       </div>
