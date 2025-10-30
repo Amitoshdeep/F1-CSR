@@ -1,16 +1,109 @@
-# React + Vite
+# F1-CSR (Formula 1 Car Setup Recommender)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive web application that provides AI-powered Formula 1 car setup recommendations based on track and weather conditions. Built with React, Three.js, and advanced visual effects.
 
-Currently, two official plugins are available:
+![F1-CSR Demo](demo.gif)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🏎️ Features
 
-## React Compiler
+- **Interactive 3D Visualization**
+  - Dynamic hyperspeed effect with responsive road and car lights
+  - Weather-based visual adaptations
+  - Interactive speed control on user input
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **AI-Powered Recommendations**
+  - Track-specific setup suggestions
+  - Weather condition adaptations
+  - Real-time setup generation
 
-## Expanding the ESLint configuration
+- **Modern User Interface**
+  - Sleek, racing-inspired design
+  - Responsive layout
+  - Smooth animations using Framer Motion
+  - Interactive audio elements
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Tech Stack
+
+- **Frontend Framework**: React 19
+- **3D Graphics**: Three.js
+- **Routing**: React Router DOM
+- **Styling**: TailwindCSS
+- **Animation**: Framer Motion
+- **Build Tool**: Vite
+- **Icons**: React Icons
+- **Post Processing**: Three.js Post Processing
+
+## 🛠️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Amitoshdeep/F1-CSR.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd F1-CSR
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 💻 Usage
+
+1. Open the application in your browser
+2. Navigate to the dashboard
+3. Select your track from the available options
+4. Choose the current weather conditions
+5. Click "GET RECOMMENDATIONS" to receive AI-generated setup suggestions
+
+## 🌟 Key Components
+
+- **Hyperspeed Effect**: Advanced 3D visualization using Three.js with custom shaders
+- **Player Component**: Interactive audio control with visual feedback
+- **Select Fields**: Custom dropdown components for track and weather selection
+- **Navbar**: Clean navigation with responsive design
+
+## 🎨 Visual Features
+
+- Dynamic road lighting effects
+- Responsive car light trails
+- Weather-based visual adaptations
+- Smooth transitions and animations
+- Racing-inspired color scheme (predominantly red and black)
+
+## 🔧 Available Scripts
+
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run preview`: Preview production build
+- `npm run lint`: Run ESLint checks
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Amitoshdeep/F1-CSR/issues).
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Amitoshdeep**
+- GitHub: [@Amitoshdeep](https://github.com/Amitoshdeep)
+
+## 🙏 Acknowledgments
+
+- Formula 1 for inspiration
+- Three.js community for 3D graphics resources
+- React community for component references
+
+---
+
+⭐️ Star this project if you find it helpful!
