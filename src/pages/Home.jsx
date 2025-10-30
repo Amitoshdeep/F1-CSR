@@ -33,14 +33,18 @@ function Home() {
   return (
     <div
       className="
-      flex flex-col gap-8 justify-center items-center
+      flex flex-col gap-1 justify-center items-center
       p-4 min-h-full w-full relative overflow-hidden"
     >
+
+      <div className="h-70 animate-pulse">
+        <img src="/imgs/f1.png" alt="" className="w-full h-full object-cover" />
+      </div>
 
       <motion.div
         animate={{
           y: getStart ? -10 : 0,
-          scale: getStart ? 0.90 : 1,
+          scale: getStart ? 0.80 : 1,
         }}
         transition={{
           duration: 0.8,
