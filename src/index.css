@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Azonix";
+  src: url("/fonts/Azonix.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-azonix: "Azonix", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+
+  --color-farrariRed: #F20707;
+}
+
+
+.commonBg{
+  @apply bg-red-900/10 backdrop-blur-sm rounded-2xl
+    border-2 border-red-500/30 min-h-20 w-max p-4 px-10
+        flex items-center justify-center flex-col
+        gap-5;
+}
+
+.commonBtn{
+  @apply px-8 py-2 border-2 border-farrariRed rounded-lg font-medium duration-300 bg-farrariRed hover:bg-red-500/0
+      flex items-center gap-2 font-azonix
+  ;
+}
+
+.commonDropDowns{
+ @apply bg-black px-8 py-2 rounded-lg;
+}
+
+select{
+  -webkit-appearance: none;
+}

@@ -1,0 +1,44 @@
+import React from 'react'
+import { NavLink } from 'react-router-dom';
+// Componenets
+import { BiSolidDashboard } from "react-icons/bi";
+
+function Navbar() {
+  return (
+    <div
+    className='flex flex-col p-4
+    bg-red-900/20 backdrop-blur-2xl
+    h-4/5 w-80
+    border-r-4 border-b-4 border-t-2
+    border-red-500/20
+    rounded-2xl
+    '>
+
+      <NavLink to={`/`} className='
+      text-2xl
+      font-azonix
+      border-b-2 border-white/10
+      px-2.5 py-1
+      '>
+        AI - CSR
+      </NavLink>
+
+      <ul className='p-2.5'>
+
+        <NavLink
+        to={`/dashboard`}
+        className={ ({isActive})=> `flex cursor-pointer items-center gap-2 rounded-lg px-1.5 py-2
+
+        ${isActive? "bg-white/10":""}`}>
+
+          <BiSolidDashboard />
+          <p>Dashboard</p>
+        </NavLink>
+
+      </ul>
+
+    </div>
+  )
+}
+
+export default Navbar
