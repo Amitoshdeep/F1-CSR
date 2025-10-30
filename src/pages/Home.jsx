@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 // My components
 import { IoSparkles } from "react-icons/io5";
-import Player from "../components/Player";
+// import Player from "../components/Player";
 import SelectField from "../components/SelectField";
 import { RiAiGenerate2 } from "react-icons/ri";
 
@@ -18,8 +18,6 @@ function Home() {
       p-4 min-h-full w-full relative overflow-hidden
     "
     >
-      {/* Background Player */}
-      <Player customClass="absolute top-0 right-0" />
 
       {/* INTRO DIV (slides up slightly) */}
       <motion.div

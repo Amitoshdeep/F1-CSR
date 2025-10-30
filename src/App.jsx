@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import RealHome from './pages/RealHome'
 import Results from './pages/Results'
 import Tracks from './pages/Tracks'
+import Player from './components/Player';
 
 function App() {
   return (
@@ -64,6 +65,9 @@ function App() {
       z-10 min-h-screen h-full
       p-4
       '>
+
+      {/* Background Player */}
+      <Player customClass="absolute top-0 right-0" />
 
         {/* NAV DIV */}
         <div
