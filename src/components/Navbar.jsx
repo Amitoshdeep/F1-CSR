@@ -28,7 +28,7 @@ function Navbar() {
 
         <NavLink
         to={`/`}
-        className={ ({isActive})=> `flex cursor-pointer items-center gap-2 rounded-lg px-1.5 py-2
+        className={ ({isActive})=> `duration-900 flex cursor-pointer items-center gap-2 rounded-lg px-1.5 py-2
 
         ${isActive? "bg-white/10":""}`}>
 
@@ -38,7 +38,7 @@ function Navbar() {
 
         <NavLink
         to={`/tracks`}
-        className={ ({isActive})=> `flex cursor-pointer items-center gap-2 rounded-lg px-1.5 py-2
+        className={ ({isActive})=> `duration-900 flex cursor-pointer items-center gap-2 rounded-lg px-1.5 py-2
 
         ${isActive? "bg-white/10":""}`}>
 
