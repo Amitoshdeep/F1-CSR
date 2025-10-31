@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 import { getSetupRecommendation } from "../utils/rules";
 
 function Results() {
@@ -14,6 +14,7 @@ function Results() {
           RECOMMENDED SETUP
         </h2>
 
+        {/* Setup Info Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-left">
           <Info label="Track" value={setup.trackName} />
           <Info label="Weather" value={setup.weather} />
@@ -23,22 +24,31 @@ function Results() {
           <Info label="Downforce" value={setup.recommendedSetup?.downforce && `${setup.recommendedSetup.downforce}%`} />
           <Info label="Suspension" value={setup.recommendedSetup?.suspension && `${setup.recommendedSetup.suspension}%`} />
           <Info label="Aero Balance" value={setup.recommendedSetup?.aeroBalance && `${setup.recommendedSetup.aeroBalance}%`} />
-          <Info label="Ride Height (F/R)" value={
-            setup.recommendedSetup?.rideHeightFront && setup.recommendedSetup?.rideHeightRear
-              ? `${setup.recommendedSetup.rideHeightFront}/${setup.recommendedSetup.rideHeightRear} mm`
-              : null
-          } />
-          <Info label="Tire Pressure (F/R)" value={
-            setup.recommendedSetup?.tirePressureFront && setup.recommendedSetup?.tirePressureRear
-              ? `${setup.recommendedSetup.tirePressureFront}/${setup.recommendedSetup.tirePressureRear} PSI`
-              : `${setup.recommendedSetup?.tirePressure} PSI`
-          } />
+          <Info
+            label="Ride Height (F/R)"
+            value={
+              setup.recommendedSetup?.rideHeightFront && setup.recommendedSetup?.rideHeightRear
+                ? `${setup.recommendedSetup.rideHeightFront}/${setup.recommendedSetup.rideHeightRear} mm`
+                : null
+            }
+          />
+          <Info
+            label="Tire Pressure (F/R)"
+            value={
+              setup.recommendedSetup?.tirePressureFront && setup.recommendedSetup?.tirePressureRear
+                ? `${setup.recommendedSetup.tirePressureFront}/${setup.recommendedSetup.tirePressureRear} PSI`
+                : `${setup.recommendedSetup?.tirePressure} PSI`
+            }
+          />
           <Info label="Brake Bias" value={setup.recommendedSetup?.brakeBias && `${setup.recommendedSetup.brakeBias}%`} />
-          <Info label="Differential (On/Off)" value={
-            setup.recommendedSetup?.differential
-              ? `${setup.recommendedSetup.differential.onThrottle}/${setup.recommendedSetup.differential.offThrottle}%`
-              : null
-          } />
+          <Info
+            label="Differential (On/Off)"
+            value={
+              setup.recommendedSetup?.differential
+                ? `${setup.recommendedSetup.differential.onThrottle}/${setup.recommendedSetup.differential.offThrottle}%`
+                : null
+            }
+          />
           <Info label="Gear Ratios" value={setup.recommendedSetup?.gearRatios} />
           <Info label="Tire Compound" value={setup.recommendedTireCompound} />
           <Info label="Fuel Consumption" value={setup.fuelConsumptionLevel} />
@@ -48,12 +58,24 @@ function Results() {
           <Info label="DRS Zones" value={setup.drsZones} />
         </div>
 
+        {/* Notes */}
         {setup.notes && (
           <div className="mt-8 pt-6 border-t-2 border-white/20">
             <p className="text-white/50 text-sm mb-2">Notes</p>
             <p className="text-base leading-relaxed">{setup.notes}</p>
           </div>
         )}
+
+        {/* 🧠 AI Explanation Button */}
+        <div className=" flex justify-center">
+          <NavLink
+            to="/explanation"
+            state={{ setup }}
+            className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-white text-base font-semibold transition-all duration-200"
+          >
+            🧠 Get AI Explanation
+          </NavLink>
+        </div>
       </div>
     </div>
   );

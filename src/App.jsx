@@ -10,6 +10,7 @@ import RealHome from './pages/RealHome'
 import Results from './pages/Results'
 import Tracks from './pages/Tracks'
 import Player from './components/Player';
+import Explanation from './pages/Explanation'
 
 function App() {
   return (
@@ -84,6 +85,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/results' element={<Results/>} />
           <Route path='/tracks' element={<Tracks/>} />
+          <Route path='/explanation' element={<Explanation/>} />
         </Routes>
 
       </div>
