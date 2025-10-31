@@ -8,19 +8,26 @@ const openai = new OpenAI({
 
 export const getExplanation = async (setup) => {
   const prompt = `
-Explain why this F1 car setup is optimal for ${setup.track} in ${setup.weather} weather.
-Respond in short bullet points only — no markdown, no bold formatting.
-Focus on:
-- Aerodynamic balance
-- Tire wear and temperature
-- Handling and stability
-- Braking and traction
-- Make Bullet Points
+  You're an expert F1 race engineer and analyst.
+  Explain why this F1 car setup is optimal for ${setup.track} in ${setup.weather} conditions.
+  Your response should sound confident, technical, and slightly cinematic — like commentary from a high-end F1 documentary or telemetry debrief.
 
-Keep it clear, technical, and under 400 words.
-Here’s the setup data:
-${JSON.stringify(setup, null, 2)}
-`;
+  Guidelines:
+  - Write in **short, impactful bullet points** only (no numbering, no markdown).
+  - Each line should feel sharp, professional, and insightful — avoid filler words.
+  - Mention aspects like:
+    - Aerodynamic balance & downforce distribution
+    - Tire wear, grip window, and temperature control
+    - Handling behavior (understeer, oversteer, responsiveness)
+    - Braking efficiency & traction on corner exits
+    - Overall performance trade-offs for the given track and weather
+  - Keep it concise but vivid — under 250 words.
+  - Avoid generic lines like “this setup is great”; every bullet should reveal something meaningful about the car's behavior.
+
+  Here’s the setup data for analysis:
+  ${JSON.stringify(setup, null, 2)}
+  `;
+
 
   try {
     const res = await openai.chat.completions.create({
@@ -32,8 +39,8 @@ ${JSON.stringify(setup, null, 2)}
     let text = res.choices[0].message.content.trim();
 
     // Basic cleanup: remove asterisks or unwanted markdown
-    text = text.replace(/\*\*/g, ""); // remove markdown bold
-    text = text.replace(/\*/g, "•");  // turn * bullets into proper bullet symbols
+    //text = text.replace(/\*\*/g, ""); // remove markdown bold
+    //text = text.replace(/\*/g, "•");  // turn * bullets into proper bullet symbols
 
     return text;
   } catch (err) {
