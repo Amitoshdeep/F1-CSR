@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import RealHome from './pages/RealHome'
 import Results from './pages/Results'
 import Tracks from './pages/Tracks'
+import CarSetup from './pages/CarSetup'
 import Player from './components/Player';
 import Explanation from './pages/Explanation'
 
@@ -83,6 +84,7 @@ function App() {
         <Routes>
           {/* <Route path='/' element={<RealHome />} /> */}
           <Route path='/' element={<Home />} />
+          <Route path='/setup' element={<CarSetup/>} />
           <Route path='/results' element={<Results/>} />
           <Route path='/tracks' element={<Tracks/>} />
           <Route path='/explanation' element={<Explanation/>} />
