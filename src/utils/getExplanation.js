@@ -15,8 +15,9 @@ Focus on:
 - Tire wear and temperature
 - Handling and stability
 - Braking and traction
+- Make Bullet Points
 
-Keep it clear, technical, and under 600 words.
+Keep it clear, technical, and under 400 words.
 Here’s the setup data:
 ${JSON.stringify(setup, null, 2)}
 `;
