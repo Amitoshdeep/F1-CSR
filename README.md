@@ -2,7 +2,7 @@
 
 A modern, interactive web application that provides AI-powered Formula 1 car setup recommendations based on track and weather conditions. Built with React, Three.js, and advanced visual effects.
 
-![F1-CSR Demo](demo.gif)
+<!-- ![F1-CSR Demo](demo.gif) -->
 
 ## 🏎️ Features
 
@@ -32,6 +32,12 @@ A modern, interactive web application that provides AI-powered Formula 1 car set
 - **Build Tool**: Vite
 - **Icons**: React Icons
 - **Post Processing**: Three.js Post Processing
+
+## Team Yoloz
+- **Amitoshdeep Singh**: Frontend Dev
+- **Amanpreet Singh**: Frontend Dev
+- **Akshat**: UI/UX and Data Collection
+- **Aakarshit Thakur**: Backend Dev
 
 ## 🛠️ Installation
 
