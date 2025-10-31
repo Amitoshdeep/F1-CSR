@@ -34,7 +34,7 @@ function Results() {
               : `${setup.recommendedSetup?.tirePressure} PSI`
           } />
           <Info label="Brake Bias" value={setup.recommendedSetup?.brakeBias && `${setup.recommendedSetup.brakeBias}%`} />
-          <Info label="Diff (On/Off)" value={
+          <Info label="Differential (On/Off)" value={
             setup.recommendedSetup?.differential
               ? `${setup.recommendedSetup.differential.onThrottle}/${setup.recommendedSetup.differential.offThrottle}%`
               : null
